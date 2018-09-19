@@ -142,6 +142,8 @@ int main () {
   v12+= n*n1_error*x2;
   v22+= n*n2_error*x2;
 
+  cout << v11 << endl << v21 << endl << v12 << endl << v22 << endl;
+
 
   //float n1_error = hidden_node_error()
 
