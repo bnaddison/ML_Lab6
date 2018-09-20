@@ -48,6 +48,7 @@ float hidden_node_error(float o, vector< pair<float, float> > we ) {
   return e;
 }
 
+
 int main () {
 
   // input values
@@ -82,13 +83,13 @@ int main () {
   node.push_back(x1n1);
   node.push_back(x2n1);
   float n1 = node_output(node);
-  cout << n1 << endl;
+  cout << "Hidden Node Output 1: " << n1 << endl;
   node.clear();
 
   node.push_back(x1n2);
   node.push_back(x2n2);
   float n2 = node_output(node);
-  cout << n2 << endl;
+  cout << "Hidden Node Output 2: " << n2 << endl;
   node.clear();
 
   pair <float, float> n1y1(n1,w11);
@@ -100,18 +101,18 @@ int main () {
   node.push_back(n1y1);
   node.push_back(n2y1);
   float y1 = node_output(node);
-  cout << y1 << endl;
+  cout << "y1: " << y1 << endl;
   node.clear();
 
   node.push_back(n1y2);
   node.push_back(n2y2);
   float y2 = node_output(node);
-  cout << y2 << endl;
+  cout << "y2: " << y2 << endl;
   node.clear();
 
   float y1_error = output_node_error(y1,t1);
   float y2_error = output_node_error(y2,t2);
-  cout << y1_error << endl << y2_error << endl;
+  cout << "y1 Error: " << y1_error << endl << "y2 Error: " << y2_error << endl;
 
   pair <float,float> w11y1e(w11,y1_error);
   pair <float,float> w21y2e(w21,y2_error);
@@ -133,16 +134,16 @@ int main () {
   w21+= n*y2_error*n1;
   w12+= n*y1_error*n2;
   w22+= n*y2_error*n2;
-  cout << w11 << endl << w21 << endl << w12 << endl << w22 << endl;
+  cout << "w11: " << w11 << endl << "w21: " << w21 << endl << "w12: " << w12 << endl << "w22: " << w22 << endl;
 
-  cout << n1_error << endl << n2_error << endl;
+  cout << "Hidden Node 1 Error: " << n1_error << endl << "Hidden Node 2 Error: " << n2_error << endl;
 
   v11+= n*n1_error*x1;
   v21+= n*n2_error*x1;
   v12+= n*n1_error*x2;
   v22+= n*n2_error*x2;
 
-  cout << v11 << endl << v21 << endl << v12 << endl << v22 << endl;
+  cout << "v11: " << v11 << endl << "v21: " << v21 << endl <<  "v12: " << v12 << endl << "v22: " << v22 << endl;
 
 
   //float n1_error = hidden_node_error()
